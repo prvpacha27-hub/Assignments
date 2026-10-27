@@ -1,0 +1,39 @@
+#Write a Jenkins Declarative Pipeline (a Jenkinsfile) that meets all the following requirements.
+
+Part 1: Pipeline Configuration & Parameters
+
+Agent: The pipeline should be able to execute on any available Jenkins node.
+
+Parameters: When a user clicks "Build with Parameters", they must be prompted for two things:
+
+BRANCH_NAME: A string parameter defaulting to main.
+
+BUILD_ENV: A dropdown/choice parameter allowing them to select dev, staging, or prod.
+
+Global Options:
+
+Configure the pipeline to automatically abort if it runs for longer than 30 minutes.
+
+Ensure that every line in the Jenkins console output includes a timestamp.
+
+Part 2: The Stages
+
+Stage 1 (Checkout): Clone the GitHub repository. Ensure it dynamically checks out the exact branch the user specified in the BRANCH_NAME parameter.
+
+Stage 2 (Precheck): Create a stage that simply prints a message to the console indicating which BUILD_ENV the pipeline is currently targeting.
+
+Stage 3 (Build): Use Maven to compile, test, and package the application. (Hint: You only need one standard Maven command to accomplish all three of these lifecycle phases at once).
+
+Part 3: Post-Build Operations
+
+On Success: If the pipeline completes successfully, configure it to archive the generated artifacts (specifically looking for .jar files inside a target/ directory) so they can be downloaded directly from the Jenkins UI.
+
+On Failure: If the pipeline fails at any point, it must completely delete the workspace directory to ensure a clean slate for the next build attempt.
+
+#For Review:
+
+Submit your complete Jenkinsfile code.
+
+Run a successful build targeting the staging environment on the main branch, and provide a screenshot showing the .jar artifact was archived.
+
+Explain briefly why the deleteDir() command was placed in the failure block rather than an always block.

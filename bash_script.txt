@@ -1,3 +1,6 @@
 
 Write a Bash script:
-download 100MB file and move that new file to /tmp/<yourname>, check the size of the /tmp/<yourname>  and calculates its size in KB. If the size is greater than 100 MB (102400 KB), archive it into a .tar.gz file. Only if the tar command succeeds, safely delete the contents inside the folder without deleting the folder itself. 
+download 100MB file and move that new file to /tmp/<yourname>, 
+check the size of the /tmp/<yourname>  and calculates its size in KB.
+If the size is greater than 100 MB (102400 KB), archive it into a .tar.gz file. 
+Only if the tar command succeeds, safely delete the contents inside the folder without deleting the folder itself. 
